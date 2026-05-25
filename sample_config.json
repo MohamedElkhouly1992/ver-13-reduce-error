@@ -1,0 +1,10 @@
+{
+  "designbuilder_xlsx": "ALL DATA - Design builder Data.xlsx",
+  "solver_daily_csv": "baseline_no_degradation_daily.csv",
+  "output_dir": "refined_daily_output",
+  "train_years": [2020, 2021, 2022, 2023],
+  "validate_years": [2024],
+  "max_lag_days": 7,
+  "apply_shift": false,
+  "residual_alpha": 100.0
+}

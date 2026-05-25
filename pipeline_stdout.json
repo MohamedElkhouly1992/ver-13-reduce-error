@@ -1,0 +1,69 @@
+{
+  "before": {
+    "n": 1825,
+    "reference_total_MWh": 8091.617112921001,
+    "model_total_MWh": 8196.82686931635,
+    "total_difference_MWh": 105.20975639534998,
+    "overall_percentage_error_pct": 1.3002315226624732,
+    "MAPE_pct": 37.10438454310093,
+    "WMAPE_pct": 37.89809378539495,
+    "CVRMSE_pct": 47.0185260054172,
+    "NMBE_pct": 1.3009443688920033,
+    "MAE_kWh_day": 1680.3115847725303,
+    "RMSE_kWh_day": 2084.689915889068,
+    "mean_daily_percentage_error_pct": 4.572771717098185
+  },
+  "component_seasonal": {
+    "n": 1825,
+    "reference_total_MWh": 8091.617112921001,
+    "model_total_MWh": 8089.625098527687,
+    "total_difference_MWh": -1.9920143933127348,
+    "overall_percentage_error_pct": -0.024618248311969813,
+    "MAPE_pct": 17.90760423635178,
+    "WMAPE_pct": 17.378553112640343,
+    "CVRMSE_pct": 23.051937320952536,
+    "NMBE_pct": -0.024631745158632076,
+    "MAE_kWh_day": 770.5238233646418,
+    "RMSE_kWh_day": 1022.0682219846675,
+    "mean_daily_percentage_error_pct": 3.6860077173075565
+  },
+  "final": {
+    "n": 1825,
+    "reference_total_MWh": 8091.617112921001,
+    "model_total_MWh": 8088.227162063927,
+    "total_difference_MWh": -3.389950857074296,
+    "overall_percentage_error_pct": -0.04189460289292599,
+    "MAPE_pct": 14.667696366324728,
+    "WMAPE_pct": 14.125538464243295,
+    "CVRMSE_pct": 19.290734893130196,
+    "NMBE_pct": -0.04191757142521378,
+    "MAE_kWh_day": 626.2928699533966,
+    "RMSE_kWh_day": 855.3054278469839,
+    "mean_daily_percentage_error_pct": 3.6310900926684138
+  },
+  "daily_shift_detection": {
+    "lag_days": -7,
+    "metrics": {
+      "n": 1818,
+      "reference_total_MWh": 8059.691202265,
+      "model_total_MWh": 8168.765160213253,
+      "total_difference_MWh": 109.07395794825159,
+      "overall_percentage_error_pct": 1.3533267616704563,
+      "MAPE_pct": 34.77323465731013,
+      "WMAPE_pct": 35.813039246990165,
+      "CVRMSE_pct": 45.15381757920811,
+      "NMBE_pct": 1.3540715755183763,
+      "MAE_kWh_day": 1587.6899743967977,
+      "RMSE_kWh_day": 2001.7922238274052,
+      "mean_daily_percentage_error_pct": 3.7428599774485143
+    },
+    "applied": false
+  },
+  "output_files": [
+    "validation_metrics_before_after.csv",
+    "validation_metrics_holdout.csv",
+    "monthly_bias_before_after.csv",
+    "corrected_daily_outputs.csv",
+    "calibration_coefficients.json"
+  ]
+}

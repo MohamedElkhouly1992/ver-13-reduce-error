@@ -1,0 +1,42 @@
+# Cell 1: install dependencies
+!pip install -q numpy pandas matplotlib
+
+# Cell 2: upload files
+from google.colab import files
+uploaded = files.upload()
+
+# Upload:
+# - hvac_daily_refinement.py
+# - run_refinement_pipeline.py
+# - ALL DATA - Design builder Data.xlsx
+# - baseline_no_degradation_daily.csv
+
+# Cell 3: run the refinement
+!python run_refinement_pipeline.py \
+  --designbuilder_xlsx "ALL DATA - Design builder Data.xlsx" \
+  --solver_daily_csv "baseline_no_degradation_daily.csv" \
+  --output_dir refined_daily_output \
+  --train_years 2020,2021,2022,2023 \
+  --validate_years 2024 \
+  --max_lag_days 7 \
+  --residual_alpha 100
+
+# Cell 4: view metrics
+import pandas as pd
+print("All years")
+display(pd.read_csv("refined_daily_output/validation_metrics_before_after.csv"))
+print("Holdout year")
+display(pd.read_csv("refined_daily_output/validation_metrics_holdout.csv"))
+display(pd.read_csv("refined_daily_output/monthly_bias_before_after.csv"))
+
+# Cell 5: download outputs
+from google.colab import files
+for f in [
+    "refined_daily_output/validation_metrics_before_after.csv",
+    "refined_daily_output/validation_metrics_holdout.csv",
+    "refined_daily_output/monthly_bias_before_after.csv",
+    "refined_daily_output/corrected_daily_outputs.csv",
+    "refined_daily_output/calibration_coefficients.json",
+    "refined_daily_output/run_summary.json",
+]:
+    files.download(f)
